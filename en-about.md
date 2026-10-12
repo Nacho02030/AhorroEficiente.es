@@ -1,15 +1,19 @@
 ---
 layout: page
-title: "About This Site"
+title: "About"
 permalink: /en/about/
 ---
 
-[Versión en español](/sobre/)
+Ahorro Eficiente is an independent publication on household energy efficiency: electricity use, tariffs, appliances and solar self-generation. Its editor is Ignacio.
 
-This site is run by Ignacio. It exists to explain home electricity use and real energy
-savings clearly and without filler, instead of the generic advice you find everywhere.
+## Methodology
 
-Articles are drafted with AI assistance and reviewed before publishing — if you spot
-an error or something that doesn't add up, let me know.
+Content is produced with the assistance of artificial intelligence tools and passes automated quality checks before publication. The calculation tools state their assumptions and present results as indicative estimates.
 
-**Contact:** nachojimenezcor@gmail.com
+## Scope
+
+The information is provided for general guidance and does not constitute professional, financial or legal advice. For investment or contracting decisions, please consult a qualified professional.
+
+## Corrections and contact
+
+If you notice an error or inaccuracy, please let us know: **nachojimenezcor@gmail.com**. Corrections are handled as promptly as possible.
