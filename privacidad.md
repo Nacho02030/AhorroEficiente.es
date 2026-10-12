@@ -4,78 +4,42 @@ title: "Política de privacidad"
 permalink: /privacidad/
 ---
 
-*Plantilla reforzada y de partida: cubre los puntos estándar de una política de
-privacidad seria, pero no sustituye una revisión legal real una vez que el sitio
-genere ingresos. No soy asesor legal y esto no es asesoramiento jurídico.*
+**Última actualización:** octubre de 2026
 
-**Última actualización:** 30 de septiembre de 2026
+**Responsable del tratamiento:** Ignacio. Contacto: nachojimenezcor@gmail.com
 
-**Responsable del tratamiento:** Ignacio — contacto: nachojimenezcor@gmail.com
+## 1. Finalidades y datos tratados
 
-## 1. Qué datos se recogen y con qué finalidad
+- **Medición de audiencia.** Este sitio utiliza Cloudflare Web Analytics para obtener estadísticas agregadas de visitas (páginas vistas, país de origen, tipo de dispositivo). Según su proveedor, este servicio no emplea cookies ni identifica individualmente a los visitantes.
+- **Publicidad.** El sitio podrá incorporar publicidad a través de Google AdSense. En tal caso, Google y sus socios podrán utilizar cookies e identificadores del dispositivo para mostrar anuncios, siempre previa obtención de su consentimiento cuando así lo exija la normativa aplicable.
+- **Contenidos de terceros.** Algunas imágenes se sirven directamente desde Pixabay; al cargarse la página, su navegador realiza una petición a los servidores de dicho proveedor, que puede conocer su dirección IP.
 
-- **Analítica de visitas** (si está activada): páginas vistas, tiempo de permanencia,
-  origen del tráfico y datos técnicos del dispositivo, para entender cómo se usa el
-  sitio y mejorarlo.
-- **Publicidad personalizada**: este sitio muestra anuncios a través de **Google
-  AdSense**. Google y sus socios publicitarios pueden usar cookies e identificadores
-  del dispositivo para mostrar anuncios basados en tus visitas a esta y otras webs.
-- **Imágenes de terceros**: los artículos pueden incluir fotos servidas directamente
-  desde **Pixabay**; al cargar la página, tu navegador hace una petición directa a sus
-  servidores (lo mismo que ocurre con prácticamente cualquier banco de imágenes
-  externo), lo que les permite ver tu dirección IP.
+## 2. Base jurídica
 
-## 2. Base legal
+El tratamiento mediante cookies o tecnologías no esenciales se basa en su consentimiento, que podrá otorgar, rechazar o retirar en cualquier momento. La medición agregada de audiencia se basa en el interés legítimo del responsable en conocer el uso del sitio.
 
-Las cookies y tecnologías no esenciales (analítica, publicidad) solo se activan con tu
-**consentimiento**, que puedes dar o rechazar en el aviso de cookies al entrar en la
-web, y retirar en cualquier momento borrando las cookies de tu navegador.
+## 3. Destinatarios y transferencias internacionales
 
-## 3. Transferencias internacionales
+Cloudflare, Google y Pixabay son proveedores con presencia en Estados Unidos. Las transferencias de datos se amparan en los mecanismos previstos por la normativa vigente, como el Marco de Privacidad de Datos UE-EE. UU. o las cláusulas contractuales tipo. Puede consultar cómo utiliza Google los datos en https://policies.google.com/technologies/partner-sites
 
-Google y Pixabay son empresas con sede en EE. UU. Cuando sus servicios procesan tus
-datos, lo hacen conforme a los mecanismos de transferencia internacional vigentes
-(como el marco de protección de datos UE-EE.UU. o cláusulas contractuales tipo).
-Puedes leer cómo usa Google estos datos aquí:
-https://policies.google.com/technologies/partner-sites
+## 4. Plazos de conservación
 
-## 4. Cuánto tiempo se conservan los datos
+Los datos se conservan durante el tiempo que establezca cada proveedor en su propia política, y en todo caso durante el tiempo necesario para las finalidades descritas.
 
-Las cookies de analítica y publicidad se conservan el tiempo que indique cada
-proveedor (Google, Pixabay) en sus propias políticas, normalmente entre varios meses
-y un par de años, salvo que las borres antes tú mismo.
+## 5. Derechos de las personas usuarias
 
-## 5. Tus derechos
+Conforme al Reglamento (UE) 2016/679 (RGPD), usted puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, así como retirar su consentimiento, dirigiéndose a nachojimenezcor@gmail.com.
 
-Si resides en la Unión Europea (RGPD), tienes derecho a:
-
-- Acceder a tus datos, rectificarlos o solicitar su supresión.
-- Oponerte al tratamiento o solicitar su limitación.
-- La portabilidad de tus datos.
-- Retirar tu consentimiento en cualquier momento, sin que afecte a la licitud del
-  tratamiento previo.
-
-Para ejercer cualquiera de estos derechos, escribe a nachojimenezcor@gmail.com.
-
-Si consideras que el tratamiento de tus datos no es correcto, tienes derecho a
-presentar una reclamación ante la **Agencia Española de Protección de Datos (AEPD)**
-(www.aepd.es) o, si resides en otro país de la UE, ante tu autoridad de protección de
-datos local.
-
-Si nos visitas desde fuera de la UE (por ejemplo, desde EE. UU.), puede que tengas
-derechos adicionales reconocidos por la normativa de tu estado o país (como CCPA/CPRA
-en California); contacta por el mismo email para cualquier solicitud.
+Asimismo, puede presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es) o ante la autoridad de control de su país de residencia. Si accede desde fuera de la Unión Europea, podrían corresponderle derechos adicionales según la legislación local (por ejemplo, CCPA/CPRA en California).
 
 ## 6. Menores
 
-Este sitio no está dirigido a menores de 16 años y no recoge deliberadamente datos de
-menores.
+El sitio no está dirigido a menores de 16 años ni recaba conscientemente datos de menores.
 
-## 7. Cambios en esta política
+## 7. Modificaciones
 
-Esta política puede actualizarse para reflejar cambios legales o del propio sitio. La
-fecha de "Última actualización" de arriba indica la versión vigente.
+Esta política podrá actualizarse para reflejar cambios normativos o del propio sitio. La fecha indicada al inicio identifica la versión vigente.
 
 ## 8. Contacto
 
-Para cualquier duda sobre esta política o sobre tus datos: nachojimenezcor@gmail.com.
+Para cualquier consulta sobre esta política o sobre sus datos personales: nachojimenezcor@gmail.com.
