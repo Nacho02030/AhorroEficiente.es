@@ -1,5 +1,5 @@
 title: "Ahorro Eficiente"
-description: "Guías y comparativas para ahorrar en la factura de la luz, el gas y el consumo del hogar — now also in English"
+description: "Guías independientes y herramientas de eficiencia energética doméstica"
 theme: minima
 
 collections:
@@ -30,3 +30,5 @@ author: "Ignacio"
 
 # Estadísticas de visitas (Cloudflare Web Analytics). Pega aquí tu token.
 cloudflare_analytics_token: "1c2f14865e0449b8b09226ec1e0cd650"
+
+adsense_client: ""
