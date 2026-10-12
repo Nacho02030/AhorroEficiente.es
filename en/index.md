@@ -1,36 +1,42 @@
 ---
-layout: page
-title: Home
+layout: landing
+title: "Home"
 permalink: /en/
 ---
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Understand your power bill and start saving</h1>
-    <p class="site-intro">Clear, no-filler guides and tools to work out what you spend and what you could save — appliances, heating and cooling, smart home gear, and solar.</p>
+    <h1>Household energy efficiency, grounded in data</h1>
+    <p class="site-intro">Independent guides and simulators to understand your electricity use, assess tariffs and evaluate an investment in solar self-generation, with an international outlook.</p>
     <div class="hero-actions">
-      <a class="btn btn-light" href="/en/calculator/">Calculate my usage</a>
-      <a class="btn btn-ghost" href="/en/solar-calculator/">Estimate solar panels</a>
+      <a class="btn btn-light" href="#tools">Explore the tools</a>
+      <a class="btn btn-ghost" href="#guides">Read the guides</a>
     </div>
   </div>
   <div class="hero-icon">{% include icon.html name="house" %}</div>
 </section>
 
-<h2 class="section-title">Tools</h2>
+<h2 class="section-title" id="tools">Tools</h2>
 <div class="tools-grid">
   <a class="tool-card" href="/en/calculator/">
     {% include icon.html name="plug" %}
-    <strong>Usage calculator</strong>
-    <span>Add all your appliances and see what they cost per month.</span>
+    <strong>Electricity usage calculator</strong>
+    <span>Estimate the consumption and running cost of every appliance in your home.</span>
   </a>
   <a class="tool-card" href="/en/solar-calculator/">
     {% include icon.html name="sun" %}
-    <strong>Solar calculator</strong>
-    <span>System size, battery, yearly savings and payback time.</span>
+    <strong>Solar PV simulator</strong>
+    <span>Required capacity, cost with or without storage, annual savings and payback period.</span>
   </a>
 </div>
 
-<h2 class="section-title">Latest articles</h2>
+<div class="pillars">
+  <div class="pillar"><strong>Independence</strong><span>No sponsored content: no company funds or influences our recommendations.</span></div>
+  <div class="pillar"><strong>Methodological transparency</strong><span>Every tool states its assumptions and presents results as ranges, not exact figures.</span></div>
+  <div class="pillar"><strong>International scope</strong><span>Content in Spanish and English, with units and criteria applicable across countries.</span></div>
+</div>
+
+<h2 class="section-title" id="guides">Latest guides</h2>
 <ul class="post-list">
 {% assign sorted_posts = site.posts_en | sort: 'date' | reverse %}
 {% for post in sorted_posts %}
@@ -45,5 +51,3 @@ permalink: /en/
   </li>
 {% endfor %}
 </ul>
-
-<p><a class="lang-link" href="/">🇪🇸 Leer este sitio en español</a></p>
