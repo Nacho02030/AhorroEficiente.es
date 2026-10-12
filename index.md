@@ -5,26 +5,28 @@ title: Inicio
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Ahorra en tu factura sin complicarte</h1>
-    <p class="site-intro">Guías claras y sin relleno sobre consumo eléctrico, tarifas, electrodomésticos y energía solar — para decidir con datos, no con suposiciones.</p>
-    <a class="lang-link" href="/en/">🇬🇧 Read this site in English</a>
+    <h1>Entiende tu factura de la luz y empieza a ahorrar</h1>
+    <p class="site-intro">Guías claras y sin relleno, y herramientas para calcular cuánto gastas y cuánto podrías ahorrar con tarifas, electrodomésticos y energía solar.</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="/calculadora/">Calcular mi consumo</a>
+      <a class="btn btn-ghost" href="/calculadora-solar/">Calcular placas solares</a>
+    </div>
   </div>
   <div class="hero-icon">{% include icon.html name="house" %}</div>
 </section>
 
-<div class="topics">
-  <a class="topic-badge" href="/categoria/tarifas/">{% include icon.html name="gauge" %}Tarifas y factura</a>
-  <a class="topic-badge" href="/categoria/electrodomesticos/">{% include icon.html name="plug" %}Electrodomésticos</a>
-  <a class="topic-badge" href="/categoria/solar/">{% include icon.html name="sun" %}Energía solar</a>
-  <a class="topic-badge" href="/categoria/domotica/">{% include icon.html name="bulb" %}Domótica</a>
-</div>
-
-<div class="calc-cta">
-  {% include icon.html name="gauge" %}
-  <div class="calc-cta-text">
-    <strong>¿Cuánto gasta realmente tu frigorífico, tu aire acondicionado o cualquier aparato?</strong>
-    <a class="button" href="/calculadora/">Pruébalo en la calculadora →</a>
-  </div>
+<h2 class="section-title">Herramientas</h2>
+<div class="tools-grid">
+  <a class="tool-card" href="/calculadora/">
+    {% include icon.html name="plug" %}
+    <strong>Calculadora de consumo</strong>
+    <span>Añade todos tus aparatos y mira cuánto gastan al mes.</span>
+  </a>
+  <a class="tool-card" href="/calculadora-solar/">
+    {% include icon.html name="sun" %}
+    <strong>Calculadora solar</strong>
+    <span>Potencia, batería, ahorro anual y años de amortización.</span>
+  </a>
 </div>
 
 <h2 class="section-title">Últimos artículos</h2>
@@ -38,6 +40,9 @@ title: Inicio
       <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
     </div>
+    {% if post.image %}<img class="post-card-thumb" src="{{ post.image }}" alt="" loading="lazy">{% endif %}
   </li>
 {% endfor %}
 </ul>
+
+<p><a class="lang-link" href="/en/">🇬🇧 Read this site in English</a></p>
