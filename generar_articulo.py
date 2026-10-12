@@ -6,8 +6,6 @@ _posts/ y _posts_en/ listos para revisar. Un fallo en un idioma no bloquea al ot
 Variables de entorno:
   GEMINI_API_KEY   (obligatoria) tu clave gratuita de https://aistudio.google.com/
   GEMINI_MODEL     (opcional) por defecto "gemini-3.1-flash-lite".
-  PIXABAY_API_KEY  (opcional) tu clave gratuita de https://pixabay.com/api/ —
-                    sin ella, los artículos se generan igual, solo que sin imagen.
   SITE_NAME_ES / SITE_NICHE_ES   (opcionales) contexto para el lado español.
   SITE_NAME_EN / SITE_NICHE_EN   (opcionales) contexto para el lado inglés.
 
@@ -242,14 +240,23 @@ def buscar_imagen(query: str):
         return None
 
 
-def construir_figura(imagen: dict) -> str:
-    return (
-        f'<figure class="post-hero-image">\n'
-        f'  <img src="{imagen["url"]}" alt="{imagen["alt"]}">\n'
-        f'  <figcaption>Foto: <a href="{imagen["fotografo_url"]}">{imagen["fotografo"]}</a>'
-        f' en <a href="{imagen["pagina"]}">Pixabay</a></figcaption>\n'
-        f"</figure>\n\n"
-    )
+FRASES_PROHIBIDAS = [
+    "como modelo de lenguaje", "as an ai", "as a language model",
+    "no puedo ayudarte", "i cannot fulfill", "i can't help", "lo siento, pero",
+]
+
+
+def limpiar_y_validar(texto: str) -> str:
+    """Control de calidad automático: quita el H1 repetido (el título ya lo pinta la
+    plantilla) y rechaza textos cortos o con negativas de la IA."""
+    texto = texto.strip()
+    texto = re.sub(r"^#\s+.*\n+", "", texto, count=1)
+    bajo = texto.lower()
+    if any(f in bajo for f in FRASES_PROHIBIDAS):
+        raise RuntimeError("control de calidad: el texto contiene una negativa de la IA")
+    if len(texto.split()) < 500:
+        raise RuntimeError("control de calidad: artículo demasiado corto")
+    return texto
 
 
 def procesar_idioma(codigo: str, cfg: dict):
@@ -279,8 +286,18 @@ def procesar_idioma(codigo: str, cfg: dict):
     slug = slugify(titulo) or "articulo"
     ruta = os.path.join(cfg["posts_dir"], f"{hoy}-{slug}.md")
 
+    contenido = limpiar_y_validar(contenido)
     categoria_slug, categoria_icono = categorizar(titulo, palabra_clave)
+    imagen = buscar_imagen(IMAGEN_QUERIES.get(categoria_slug, "home energy"))
     titulo_yaml = titulo.replace('"', "'")
+    extra = ""
+    if imagen:
+        credito = imagen["fotografo"].replace('"', "'")
+        extra = (
+            f'image: "{imagen["url"]}"\n'
+            f'image_credit: "{credito}"\n'
+            f'image_credit_url: "{imagen["fotografo_url"]}"\n'
+        )
     front_matter = (
         "---\n"
         "layout: post\n"
@@ -288,15 +305,13 @@ def procesar_idioma(codigo: str, cfg: dict):
         f"date: {hoy} 09:00:00 +0200\n"
         f"categories: [{categoria_slug}]\n"
         f"icon: {categoria_icono}\n"
-        "---\n\n"
+        + extra
+        + "---\n\n"
     )
-
-    imagen = buscar_imagen(IMAGEN_QUERIES.get(categoria_slug, "home energy"))
-    figura = construir_figura(imagen) if imagen else ""
 
     os.makedirs(cfg["posts_dir"], exist_ok=True)
     with open(ruta, "w", encoding="utf-8") as f:
-        f.write(front_matter + figura + contenido.strip() + "\n")
+        f.write(front_matter + contenido + "\n")
 
     pendiente["estado"] = "borrador-generado"
     guardar_temas(cfg["temas_csv"], temas)
