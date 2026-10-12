@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- assign is_en = false -%}
+{%- if page.url contains '/en/' -%}{%- assign is_en = true -%}{%- endif -%}
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <p class="post-meta"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%d %b %Y" }}</time></p>
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+  </header>
+
+  {%- if page.image -%}
+  <figure class="post-hero-image">
+    <img src="{{ page.image }}" alt="{{ page.title | escape }}">
+    {%- if page.image_credit -%}
+    <figcaption>{% if is_en %}Photo{% else %}Foto{% endif %}: <a href="{{ page.image_credit_url }}">{{ page.image_credit }}</a> · <a href="https://pixabay.com/">Pixabay</a></figcaption>
+    {%- endif -%}
+  </figure>
+  {%- else -%}
+  <div class="post-banner post-banner-{{ page.icon | default: 'house' }}">{% include icon.html name=page.icon %}</div>
+  {%- endif -%}
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <div class="post-cta">
+    {%- if is_en -%}
+    <strong>Put numbers on it.</strong> Try the <a href="/en/calculator/">appliance cost calculator</a> or the <a href="/en/solar-calculator/">solar installation estimator</a>.
+    {%- else -%}
+    <strong>Ponle números.</strong> Prueba la <a href="/calculadora/">calculadora de consumo</a> o la <a href="/calculadora-solar/">calculadora de instalación solar</a>.
+    {%- endif -%}
+  </div>
+</article>
