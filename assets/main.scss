@@ -595,3 +595,32 @@ body { font-size: 17px; line-height: 1.7; }
   .hero-text h1 { font-size: 30px; }
   .post-card-thumb { display: none; }
 }
+
+
+// ===== Portada, menú y bloques institucionales =====
+
+.landing h1 { border-bottom: none; padding-bottom: 0; margin-top: 0; }
+.landing .section-title { margin-top: 12px; }
+
+.site-nav .page-link {
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: background 0.15s ease;
+}
+
+.site-nav .page-link:hover { background: $brand-color-light; text-decoration: none; }
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+  margin: 4px 0 44px;
+  padding: 28px;
+  border-radius: 18px;
+  background: $brand-color-light;
+}
+
+.pillar strong { display: block; font-size: 17px; margin-bottom: 6px; color: $brand-color; }
+.pillar span { color: #3b4642; font-size: 15px; line-height: 1.6; }
+
+.footer-note { font-size: 14px; color: $grey-color; margin-top: 4px; }
