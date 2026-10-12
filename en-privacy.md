@@ -4,76 +4,42 @@ title: "Privacy Policy"
 permalink: /en/privacy/
 ---
 
-[Versión en español](/privacidad/)
+**Last updated:** October 2026
 
-*A reinforced starting template: it covers the standard elements of a serious privacy
-policy, but it is not a substitute for a real legal review once the site is earning
-money. This is not legal advice.*
+**Data controller:** Ignacio. Contact: nachojimenezcor@gmail.com
 
-**Last updated:** September 30, 2026
+## 1. Purposes and data processed
 
-**Data controller:** Ignacio — contact: nachojimenezcor@gmail.com
-
-## 1. What data is collected, and why
-
-- **Visit analytics** (if enabled): pages viewed, time on site, traffic source, and
-  technical device data, used to understand and improve the site.
-- **Personalized advertising**: this site shows ads through **Google AdSense**. Google
-  and its advertising partners may use cookies and device identifiers to show ads
-  based on your visits to this and other sites.
-- **Third-party images**: articles may include photos served directly from
-  **Pixabay**; when the page loads, your browser makes a direct request to their
-  servers (as happens with virtually any external image library), which lets them see
-  your IP address.
+- **Audience measurement.** This site uses Cloudflare Web Analytics to obtain aggregate visit statistics (page views, country of origin, device type). According to its provider, this service does not use cookies or identify individual visitors.
+- **Advertising.** The site may display advertising through Google AdSense. In that case, Google and its partners may use cookies and device identifiers to serve ads, subject to obtaining your consent wherever applicable law requires it.
+- **Third-party content.** Some images are served directly from Pixabay; when a page loads, your browser makes a request to that provider's servers, which may therefore see your IP address.
 
 ## 2. Legal basis
 
-Non-essential cookies (analytics, advertising) are only activated with your
-**consent**, which you can give or decline in the cookie notice when you enter the
-site, and withdraw at any time by clearing your browser's cookies.
+Processing through non-essential cookies or similar technologies is based on your consent, which you may give, refuse or withdraw at any time. Aggregate audience measurement is based on the controller's legitimate interest in understanding how the site is used.
 
-## 3. International transfers
+## 3. Recipients and international transfers
 
-Google and Pixabay are US-based companies. When their services process your data,
-they do so under applicable international transfer safeguards (such as the EU-US Data
-Privacy Framework or standard contractual clauses). You can read how Google uses this
-data here: https://policies.google.com/technologies/partner-sites
+Cloudflare, Google and Pixabay are providers with a presence in the United States. Data transfers rely on the mechanisms provided by applicable law, such as the EU-US Data Privacy Framework or standard contractual clauses. You can read how Google uses data at https://policies.google.com/technologies/partner-sites
 
-## 4. How long data is kept
+## 4. Retention
 
-Analytics and advertising cookies are kept for whatever period each provider (Google,
-Pixabay) states in its own policies — typically a few months to a couple of years —
-unless you clear them yourself first.
+Data is retained for the period set by each provider in its own policy and, in any case, for as long as necessary for the purposes described.
 
 ## 5. Your rights
 
-If you live in the EU (GDPR), you have the right to:
+Under Regulation (EU) 2016/679 (GDPR), you may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability, and withdraw your consent, by writing to nachojimenezcor@gmail.com.
 
-- Access, correct, or request deletion of your data.
-- Object to processing or request its restriction.
-- Data portability.
-- Withdraw consent at any time, without affecting the lawfulness of prior processing.
-
-To exercise any of these rights, write to nachojimenezcor@gmail.com.
-
-If you believe your data hasn't been handled correctly, you can file a complaint with
-the **Spanish Data Protection Agency (AEPD)** (www.aepd.es) or your own country's data
-protection authority if you live elsewhere in the EU.
-
-If you're visiting from outside the EU (for example, from the US), you may have
-additional rights under your state or country's law (such as CCPA/CPRA in
-California); contact the same email for any request.
+You may also lodge a complaint with the Spanish Data Protection Agency (www.aepd.es) or with the supervisory authority of your country of residence. If you access the site from outside the European Union, additional rights may apply under local law (for example, CCPA/CPRA in California).
 
 ## 6. Children
 
-This site is not directed at children under 16 and does not knowingly collect data
-from children.
+The site is not directed at children under 16 and does not knowingly collect data from children.
 
-## 7. Changes to this policy
+## 7. Changes
 
-This policy may be updated to reflect legal or site changes. The "Last updated" date
-above indicates the current version.
+This policy may be updated to reflect legal or site changes. The date above identifies the current version.
 
 ## 8. Contact
 
-For any question about this policy or your data: nachojimenezcor@gmail.com.
+For any question about this policy or your personal data: nachojimenezcor@gmail.com.
