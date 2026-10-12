@@ -2,13 +2,12 @@ name: Generar artículo automático
 
 "on":
   schedule:
-    # Lunes y jueves a las 07:00 UTC. Cambia la expresión cron si quieres otro ritmo.
-    - cron: "0 7 * * 1,4"
-  workflow_dispatch: {}   # te deja lanzarlo a mano desde la pestaña "Actions"
+    - cron: "0 7 * * *"
+  workflow_dispatch: {}
 
 permissions:
   contents: write
-  pull-requests: write
+  pages: write
 
 jobs:
   generar:
@@ -16,6 +15,8 @@ jobs:
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PUBLISH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Configurar Python
         uses: actions/setup-python@v5
@@ -25,7 +26,7 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Generar artículo con IA
+      - name: Generar artículos con IA
         id: generar
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -37,23 +38,18 @@ jobs:
           SITE_NICHE_EN: ${{ secrets.SITE_NICHE_EN }}
         run: python generar_articulo.py
 
-      - name: Abrir Pull Request para revisión
+      - name: Publicar en la web
         if: steps.generar.outputs.hubo_contenido == 'si'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "Nuevos borradores: ${{ steps.generar.outputs.resumen }}"
-          title: "Nuevos artículos generados: ${{ steps.generar.outputs.resumen }}"
-          body: |
-            Artículos generados automáticamente con IA (español e inglés) a partir de
-            temas_es.csv / temas_en.csv.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _posts _posts_en temas_es.csv temas_en.csv
+          git commit -m "Publicación automática de artículos" || exit 0
+          git pull --rebase origin main
+          git push
 
-            Antes de fusionar (Merge):
-            - Léelos por encima (5-10 min cada uno).
-            - Corrige cualquier dato que suene inventado o genérico.
-            - Si te convencen, pulsa **Merge pull request** y quedarán publicados.
-          branch: "articulo-automatico/${{ github.run_number }}"
-          add-paths: |
-            _posts/*
-            _posts_en/*
-            temas_es.csv
-            temas_en.csv
+      - name: Pedir a GitHub Pages que reconstruya la web
+        if: steps.generar.outputs.hubo_contenido == 'si'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "No se pudo pedir la reconstrucción"
