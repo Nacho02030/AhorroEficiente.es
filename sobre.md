@@ -1,14 +1,19 @@
 ---
 layout: page
-title: "Sobre este sitio"
+title: "Sobre nosotros"
 permalink: /sobre/
 ---
 
-Este sitio lo lleva Ignacio. Nace con una idea sencilla: explicar de forma clara y sin
-relleno cómo funciona el consumo eléctrico en casa y qué merece realmente la pena para
-ahorrar, en vez de dar consejos genéricos que se leen en cualquier sitio.
+Ahorro Eficiente es una publicación independiente dedicada a la eficiencia energética doméstica: consumo eléctrico, tarifas, electrodomésticos y autoconsumo fotovoltaico. Su editor es Ignacio.
 
-Los artículos se preparan con ayuda de IA y se revisan antes de publicarse — si detectas
-algún error o un dato que no cuadra, házmelo saber.
+## Metodología
 
-**Contacto:** nachojimenezcor@gmail.com
+Los contenidos se elaboran con la asistencia de herramientas de inteligencia artificial y se someten a controles automáticos de calidad antes de su publicación. Las herramientas de cálculo indican sus supuestos y presentan los resultados como estimaciones orientativas.
+
+## Alcance
+
+La información tiene carácter divulgativo y no constituye asesoramiento profesional, financiero ni jurídico. Para decisiones de inversión o contratación, consulte con un profesional cualificado.
+
+## Correcciones y contacto
+
+Si detecta un error o una imprecisión, le rogamos que nos lo comunique: **nachojimenezcor@gmail.com**. Las correcciones se atienden con la mayor diligencia posible.
