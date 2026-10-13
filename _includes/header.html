@@ -2,8 +2,9 @@
   <div class="wrapper">
     {%- assign is_en = false -%}
     {%- if page.url contains '/en/' -%}{%- assign is_en = true -%}{%- endif -%}
+    {%- if is_en -%}{%- assign home = '/en/' -%}{%- else -%}{%- assign home = '/' -%}{%- endif -%}
 
-    <a class="site-title" rel="author" href="{{ is_en | ternary: '/en/', '/' | relative_url }}">{{ site.title }}</a>
+    <a class="site-title" rel="author" href="{{ home | relative_url }}">{{ site.title }}</a>
 
     <nav class="site-nav">
       <input type="checkbox" id="nav-trigger" class="nav-trigger" />
