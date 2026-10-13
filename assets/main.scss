@@ -624,3 +624,16 @@ body { font-size: 17px; line-height: 1.7; }
 .pillar span { color: #3b4642; font-size: 15px; line-height: 1.6; }
 
 .footer-note { font-size: 14px; color: $grey-color; margin-top: 4px; }
+
+
+
+.calc-card input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid $grey-color-light;
+  border-radius: 8px;
+  background: #fff;
+  color: $text-color;
+  box-sizing: border-box;
+}
