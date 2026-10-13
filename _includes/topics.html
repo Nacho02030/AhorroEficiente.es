@@ -1,0 +1,18 @@
+{%- assign is_en = false -%}
+{%- if page.url contains '/en/' -%}{%- assign is_en = true -%}{%- endif -%}
+<h2 class="section-title">{% if is_en %}Browse by topic{% else %}Explorar por tema{% endif %}</h2>
+<div class="topics">
+{%- if is_en -%}
+  <a class="topic-badge" href="/en/category/bills-rates/">{% include icon.html name="gauge" %}Bills &amp; Rates</a>
+  <a class="topic-badge" href="/en/category/appliances/">{% include icon.html name="plug" %}Appliances</a>
+  <a class="topic-badge" href="/en/category/solar/">{% include icon.html name="sun" %}Solar</a>
+  <a class="topic-badge" href="/en/category/smart-home/">{% include icon.html name="bulb" %}Smart Home</a>
+  <a class="topic-badge" href="/en/category/savings/">{% include icon.html name="house" %}Practical Savings</a>
+{%- else -%}
+  <a class="topic-badge" href="/categoria/tarifas/">{% include icon.html name="gauge" %}Tarifas y factura</a>
+  <a class="topic-badge" href="/categoria/electrodomesticos/">{% include icon.html name="plug" %}Electrodomésticos</a>
+  <a class="topic-badge" href="/categoria/solar/">{% include icon.html name="sun" %}Energía solar</a>
+  <a class="topic-badge" href="/categoria/domotica/">{% include icon.html name="bulb" %}Domótica</a>
+  <a class="topic-badge" href="/categoria/ahorro/">{% include icon.html name="house" %}Ahorro práctico</a>
+{%- endif -%}
+</div>
