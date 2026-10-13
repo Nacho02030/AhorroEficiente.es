@@ -637,3 +637,9 @@ body { font-size: 17px; line-height: 1.7; }
   color: $text-color;
   box-sizing: border-box;
 }
+
+
+.site-title:hover,
+.site-title:focus {
+  text-decoration: none;
+}
