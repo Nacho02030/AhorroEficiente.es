@@ -11,22 +11,23 @@
       </div>
       <div class="footer-col footer-col-2">
         {%- if is_en -%}
-          <p><a href="{{ '/en/about/' | relative_url }}">About</a> · <a href="{{ '/en/privacy/' | relative_url }}">Privacy Policy</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+          <p><a href="{{ '/en/about/' | relative_url }}">About</a> · <a href="{{ '/en/editorial-policy/' | relative_url }}">Editorial policy</a> · <a href="{{ '/en/contact/' | relative_url }}">Contact</a></p>
+          <p><a href="{{ '/en/legal-notice/' | relative_url }}">Legal notice</a> · <a href="{{ '/en/privacy/' | relative_url }}">Privacy</a> · <a href="{{ '/en/cookies/' | relative_url }}">Cookies</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
         {%- else -%}
-          <p><a href="{{ '/sobre/' | relative_url }}">Sobre nosotros</a> · <a href="{{ '/privacidad/' | relative_url }}">Política de privacidad</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+          <p><a href="{{ '/sobre/' | relative_url }}">Sobre nosotros</a> · <a href="{{ '/politica-editorial/' | relative_url }}">Política editorial</a> · <a href="{{ '/contacto/' | relative_url }}">Contacto</a></p>
+          <p><a href="{{ '/aviso-legal/' | relative_url }}">Aviso legal</a> · <a href="{{ '/privacidad/' | relative_url }}">Privacidad</a> · <a href="{{ '/cookies/' | relative_url }}">Cookies</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
         {%- endif -%}
       </div>
       <div class="footer-col footer-col-3">
         {%- if is_en -%}
-          <p><a href="{{ '/en/calculator/' | relative_url }}">Usage calculator</a> · <a href="{{ '/en/solar-calculator/' | relative_url }}">Solar PV simulator</a></p>
+          <p><a href="{{ '/en/tools/' | relative_url }}">All tools</a> · <a href="{{ '/en/calculator/' | relative_url }}">Usage calculator</a> · <a href="{{ '/en/solar-calculator/' | relative_url }}">Solar PV simulator</a></p>
         {%- else -%}
-          <p><a href="{{ '/calculadora/' | relative_url }}">Calculadora de consumo</a> · <a href="{{ '/calculadora-solar/' | relative_url }}">Simulador fotovoltaico</a></p>
+          <p><a href="{{ '/herramientas/' | relative_url }}">Todas las herramientas</a> · <a href="{{ '/calculadora/' | relative_url }}">Calculadora de consumo</a> · <a href="{{ '/calculadora-solar/' | relative_url }}">Simulador fotovoltaico</a></p>
         {%- endif -%}
       </div>
     </div>
   </div>
 </footer>
-{%- if site.cloudflare_analytics_token and site.cloudflare_analytics_token != "" and site.cloudflare_analytics_token != "1c2f14865e0449b8b0
-9226ec1e0cd650" -%}
+{%- if site.cloudflare_analytics_token and site.cloudflare_analytics_token != "" and site.cloudflare_analytics_token != "PEGA_AQUI_TU_TOKEN" -%}
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflare_analytics_token }}"}'></script>
 {%- endif -%}
