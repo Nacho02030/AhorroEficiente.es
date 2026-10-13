@@ -1,0 +1,17 @@
+{%- assign is_en = false -%}
+{%- if page.url contains '/en/' -%}{%- assign is_en = true -%}{%- endif -%}
+<div class="tools-grid">
+{%- if is_en -%}
+  <a class="tool-card" href="/en/calculator/">{% include icon.html name="plug" %}<strong>Electricity usage calculator</strong><span>Estimate the consumption and running cost of every appliance in your home.</span></a>
+  <a class="tool-card" href="/en/solar-calculator/">{% include icon.html name="sun" %}<strong>Solar PV simulator</strong><span>Required capacity, cost with or without storage, annual savings and payback period.</span></a>
+  <a class="tool-card" href="/en/offer-comparison/">{% include icon.html name="gauge" %}<strong>Electricity offer comparison</strong><span>Compare two tariffs using your own prices, including peak and off-peak rates.</span></a>
+  <a class="tool-card" href="/en/carbon-footprint/">{% include icon.html name="house" %}<strong>Carbon footprint of your electricity</strong><span>Convert consumption into CO₂ emissions using the factor for your grid.</span></a>
+  <a class="tool-card" href="/en/led-savings/">{% include icon.html name="bulb" %}<strong>LED lighting savings</strong><span>Savings and payback from replacing old bulbs with LED.</span></a>
+{%- else -%}
+  <a class="tool-card" href="/calculadora/">{% include icon.html name="plug" %}<strong>Calculadora de consumo eléctrico</strong><span>Estime el consumo y el coste de todos los aparatos de su hogar.</span></a>
+  <a class="tool-card" href="/calculadora-solar/">{% include icon.html name="sun" %}<strong>Simulador fotovoltaico</strong><span>Potencia necesaria, coste con o sin batería, ahorro anual y plazo de amortización.</span></a>
+  <a class="tool-card" href="/comparador-ofertas/">{% include icon.html name="gauge" %}<strong>Comparador de ofertas eléctricas</strong><span>Compare dos tarifas con sus propios precios, incluidas las horas punta y valle.</span></a>
+  <a class="tool-card" href="/huella-carbono/">{% include icon.html name="house" %}<strong>Huella de carbono de su electricidad</strong><span>Convierta su consumo en emisiones de CO₂ según el factor de su red eléctrica.</span></a>
+  <a class="tool-card" href="/iluminacion-led/">{% include icon.html name="bulb" %}<strong>Ahorro con iluminación LED</strong><span>Ahorro y plazo de amortización al sustituir bombillas antiguas por LED.</span></a>
+{%- endif -%}
+</div>
