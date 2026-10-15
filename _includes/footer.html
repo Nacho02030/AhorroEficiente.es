@@ -28,6 +28,18 @@
     </div>
   </div>
 </footer>
+<script>
+  (function () {
+    var b = document.getElementById('theme-toggle');
+    if (!b) return;
+    b.addEventListener('click', function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (dark) { document.documentElement.removeAttribute('data-theme'); }
+      else { document.documentElement.setAttribute('data-theme', 'dark'); }
+      try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
+    });
+  })();
+</script>
 {%- if site.cloudflare_analytics_token and site.cloudflare_analytics_token != "" and site.cloudflare_analytics_token != "PEGA_AQUI_TU_TOKEN" -%}
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflare_analytics_token }}"}'></script>
 {%- endif -%}
