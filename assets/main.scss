@@ -643,3 +643,71 @@ body { font-size: 17px; line-height: 1.7; }
 .site-title:focus {
   text-decoration: none;
 }
+
+
+// ===== Modo oscuro =====
+
+.theme-toggle {
+  margin-left: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid $grey-color-light;
+  background: transparent;
+  color: inherit;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.theme-toggle:hover { background: $brand-color-light; }
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  body { background: #121618; color: #e4eae7; }
+  h1, h2, h3, h4 { color: #f0f4f2; }
+  a, a:visited { color: #52d19a; }
+  hr { border-color: #2f3b3f; }
+
+  .site-title, .site-title:visited { color: #52d19a !important; }
+  .site-header { background: rgba(18, 22, 24, 0.92); border-bottom-color: #232c2f; border-top-color: #2e9d68; }
+  .site-nav { background-color: #121618; border-color: #232c2f; }
+  .site-nav .page-link { color: #e4eae7; }
+  .site-nav .page-link:hover { background: #1f2a27; }
+  .site-nav .lang-link { color: #52d19a !important; border-color: #52d19a; }
+  .theme-toggle { border-color: #3a474b; }
+  .theme-toggle:hover { background: #1f2a27; }
+
+  .site-footer { background: #1a2124; border-top-color: #232c2f; color: #a8b4af; }
+  .footer-note { color: #a8b4af; }
+
+  .post-list > li.post-card, .tool-card, .calc-card, .calc-row { background: #1b2225; border-color: #2a3438; }
+  .post-link { color: #f0f4f2; }
+  .post-link:hover { color: #52d19a; }
+  .post-meta, .post-excerpt, .calc-hint, .calc-mini span, .tool-card span,
+  .post-hero-image figcaption, .post-hero-image figcaption a { color: #9aa7a2; }
+  .tool-card { color: #e4eae7; }
+  .post-card-icon, .pillars, .calc-result > div { background: #1c2a25; }
+  .post-card-icon .icon, .pillar strong, .calc-result strong { color: #52d19a; }
+  .pillar span { color: #c3cdc8; }
+  .section-title, .page-content h1 { border-bottom-color: #232c2f; }
+
+  .topic-badge { background: #3a2c19; color: #f0c58a; }
+  .post-cta, .calc-solar-link, .calc-cta { background: #33291a; color: #f0c58a; }
+
+  .calc-card select, .calc-card input[type="number"], .calc-card input[type="text"] {
+    background: #11171a; color: #e4eae7; border-color: #2f3b3f;
+  }
+  .calc-remove { background: #1b2225; border-color: #2f3b3f; color: #9aa7a2; }
+  .calc-add { color: #52d19a; border-color: #52d19a; }
+  .calc-add:hover { background: #1c2a25; }
+
+  code, pre { background: #1d2528; color: #e4eae7; border-color: #2f3b3f; }
+  table th { background: #1d2528; }
+  table th, table td { border-color: #2f3b3f; }
+  blockquote { color: #9aa7a2; border-left-color: #2f3b3f; }
+
+  .post-hero-image img, .post-card-thumb { filter: brightness(0.9); }
+}
