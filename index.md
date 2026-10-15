@@ -16,18 +16,7 @@ title: "Ahorro Eficiente · Guías y herramientas de eficiencia energética"
 </section>
 
 <h2 class="section-title" id="herramientas">Herramientas</h2>
-<div class="tools-grid">
-  <a class="tool-card" href="/calculadora/">
-    {% include icon.html name="plug" %}
-    <strong>Calculadora de consumo eléctrico</strong>
-    <span>Estime el consumo y el coste de todos los aparatos de su hogar.</span>
-  </a>
-  <a class="tool-card" href="/calculadora-solar/">
-    {% include icon.html name="sun" %}
-    <strong>Simulador fotovoltaico</strong>
-    <span>Potencia necesaria, coste con o sin batería, ahorro anual y plazo de amortización.</span>
-  </a>
-</div>
+{% include tools-grid.html %}
 
 <div class="pillars">
   <div class="pillar"><strong>Independencia</strong><span>Contenido sin patrocinio: ninguna empresa financia ni condiciona nuestras recomendaciones.</span></div>
@@ -46,7 +35,7 @@ title: "Ahorro Eficiente · Guías y herramientas de eficiencia energética"
       <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
     </div>
-    {% if post.image %}<img class="post-card-thumb" src="{{ post.image }}" alt="" loading="lazy">{% endif %}
+    {% if post.image contains '/assets/img/' %}<img class="post-card-thumb" src="{{ post.image | relative_url }}" alt="" loading="lazy">{% endif %}
   </li>
 {% endfor %}
 </ul>
