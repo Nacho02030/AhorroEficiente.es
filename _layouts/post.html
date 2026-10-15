@@ -5,13 +5,13 @@ layout: default
 {%- if page.url contains '/en/' -%}{%- assign is_en = true -%}{%- endif -%}
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <p class="post-meta"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%d %b %Y" }}</time></p>
+    <p class="post-meta"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%d/%m/%Y" }}</time></p>
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
   </header>
 
-  {%- if page.image -%}
+  {%- if page.image contains '/assets/img/' -%}
   <figure class="post-hero-image">
-    <img src="{{ page.image }}" alt="{{ page.title | escape }}">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}">
     {%- if page.image_credit -%}
     <figcaption>{% if is_en %}Photo{% else %}Foto{% endif %}: <a href="{{ page.image_credit_url }}">{{ page.image_credit }}</a> · <a href="https://pixabay.com/">Pixabay</a></figcaption>
     {%- endif -%}
@@ -26,9 +26,9 @@ layout: default
 
   <div class="post-cta">
     {%- if is_en -%}
-    <strong>Put numbers on it.</strong> Try the <a href="/en/calculator/">appliance cost calculator</a> or the <a href="/en/solar-calculator/">solar installation estimator</a>.
+    <strong>Put numbers on it.</strong> Try the <a href="/en/calculator/">appliance cost calculator</a> or the <a href="/en/solar-calculator/">solar PV simulator</a>.
     {%- else -%}
-    <strong>Ponle números.</strong> Prueba la <a href="/calculadora/">calculadora de consumo</a> o la <a href="/calculadora-solar/">calculadora de instalación solar</a>.
+    <strong>Ponga cifras a su caso.</strong> Pruebe la <a href="/calculadora/">calculadora de consumo</a> o el <a href="/calculadora-solar/">simulador fotovoltaico</a>.
     {%- endif -%}
   </div>
 </article>
