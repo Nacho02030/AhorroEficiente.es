@@ -200,11 +200,31 @@ def generar_mas_temas(cfg, temas_existentes, cuantos: int = 8):
     return nuevos
 
 
-def buscar_imagen(query: str):
-    """Busca una foto libre de derechos en Pixabay para ilustrar el artículo.
-    Si no hay PIXABAY_API_KEY configurada, o la búsqueda falla por lo que sea,
-    devuelve None y el artículo se genera igual, solo que sin imagen —
-    nunca bloquea la generación por esto."""
+IMG_DIR = os.path.join("assets", "img")
+
+
+def ids_usados():
+    """IDs de Pixabay ya usados en artículos existentes, para no repetir foto."""
+    usados = set()
+    for carpeta in ("_posts", "_posts_en"):
+        if not os.path.isdir(carpeta):
+            continue
+        for nombre in os.listdir(carpeta):
+            try:
+                with open(os.path.join(carpeta, nombre), encoding="utf-8") as f:
+                    m = re.search(r"^image_id:\s*(\d+)", f.read(2000), re.M)
+                if m:
+                    usados.add(m.group(1))
+            except OSError:
+                pass
+    return usados
+
+
+def buscar_imagen(query: str, base: str):
+    """Busca una foto en Pixabay que no se haya usado antes, la DESCARGA a
+    assets/img/ y devuelve sus datos. Pixabay no permite enlazar sus fotos de forma
+    permanente, por eso se guardan en el propio sitio. Si algo falla devuelve None
+    y el artículo se publica igual, con la ilustración por tema."""
     if not PIXABAY_API_KEY:
         return None
     try:
@@ -213,29 +233,39 @@ def buscar_imagen(query: str):
             params={
                 "key": PIXABAY_API_KEY,
                 "q": query,
+                "lang": "en",
                 "image_type": "photo",
                 "orientation": "horizontal",
                 "safesearch": "true",
-                "per_page": 3,
+                "per_page": 30,
             },
             timeout=20,
         )
         if r.status_code != 200:
             return None
-        hits = r.json().get("hits") or []
-        if not hits:
-            return None
-        foto = hits[0]
-        usuario = foto.get("user", "Pixabay")
-        user_id = foto.get("user_id")
-        perfil = f"https://pixabay.com/users/{usuario}-{user_id}/" if user_id else "https://pixabay.com/"
-        return {
-            "url": foto.get("largeImageURL") or foto.get("webformatURL"),
-            "alt": query,
-            "fotografo": usuario,
-            "fotografo_url": perfil,
-            "pagina": foto.get("pageURL", "https://pixabay.com/"),
-        }
+        usados = ids_usados()
+        libres = [h for h in (r.json().get("hits") or []) if str(h.get("id")) not in usados]
+        for foto in libres[:3]:
+            url = foto.get("largeImageURL") or foto.get("webformatURL")
+            if not url:
+                continue
+            img = requests.get(url, timeout=30)
+            tipo = img.headers.get("Content-Type", "")
+            if img.status_code != 200 or not tipo.startswith("image") or len(img.content) < 5000:
+                continue
+            os.makedirs(IMG_DIR, exist_ok=True)
+            ruta = os.path.join(IMG_DIR, f"{base}.jpg")
+            with open(ruta, "wb") as f:
+                f.write(img.content)
+            usuario = foto.get("user", "Pixabay")
+            user_id = foto.get("user_id")
+            return {
+                "url": "/" + ruta.replace(os.sep, "/"),
+                "id": foto.get("id"),
+                "fotografo": usuario,
+                "fotografo_url": f"https://pixabay.com/users/{usuario}-{user_id}/" if user_id else "https://pixabay.com/",
+            }
+        return None
     except requests.RequestException:
         return None
 
@@ -288,13 +318,14 @@ def procesar_idioma(codigo: str, cfg: dict):
 
     contenido = limpiar_y_validar(contenido)
     categoria_slug, categoria_icono = categorizar(titulo, palabra_clave)
-    imagen = buscar_imagen(IMAGEN_QUERIES.get(categoria_slug, "home energy"))
+    imagen = buscar_imagen(IMAGEN_QUERIES.get(categoria_slug, "home energy"), f"{hoy}-{slug}")
     titulo_yaml = titulo.replace('"', "'")
     extra = ""
     if imagen:
         credito = imagen["fotografo"].replace('"', "'")
         extra = (
             f'image: "{imagen["url"]}"\n'
+            f'image_id: {imagen["id"]}\n'
             f'image_credit: "{credito}"\n'
             f'image_credit_url: "{imagen["fotografo_url"]}"\n'
         )
