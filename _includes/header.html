@@ -22,11 +22,13 @@
           <a class="page-link" href="{{ '/en/#guides' | relative_url }}">Guides</a>
           <a class="page-link" href="{{ '/en/about/' | relative_url }}">About</a>
           <a class="page-link lang-link" href="{{ '/' | relative_url }}">Español</a>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
         {%- else -%}
           <a class="page-link" href="{{ '/herramientas/' | relative_url }}">Herramientas</a>
           <a class="page-link" href="{{ '/#guias' | relative_url }}">Guías</a>
           <a class="page-link" href="{{ '/sobre/' | relative_url }}">Sobre nosotros</a>
           <a class="page-link lang-link" href="{{ '/en/' | relative_url }}">English</a>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo oscuro o claro" title="Modo oscuro / claro">◐</button>
         {%- endif -%}
       </div>
     </nav>
