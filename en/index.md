@@ -17,18 +17,7 @@ permalink: /en/
 </section>
 
 <h2 class="section-title" id="tools">Tools</h2>
-<div class="tools-grid">
-  <a class="tool-card" href="/en/calculator/">
-    {% include icon.html name="plug" %}
-    <strong>Electricity usage calculator</strong>
-    <span>Estimate the consumption and running cost of every appliance in your home.</span>
-  </a>
-  <a class="tool-card" href="/en/solar-calculator/">
-    {% include icon.html name="sun" %}
-    <strong>Solar PV simulator</strong>
-    <span>Required capacity, cost with or without storage, annual savings and payback period.</span>
-  </a>
-</div>
+{% include tools-grid.html %}
 
 <div class="pillars">
   <div class="pillar"><strong>Independence</strong><span>No sponsored content: no company funds or influences our recommendations.</span></div>
@@ -47,7 +36,7 @@ permalink: /en/
       <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
     </div>
-    {% if post.image %}<img class="post-card-thumb" src="{{ post.image }}" alt="" loading="lazy">{% endif %}
+    {% if post.image contains '/assets/img/' %}<img class="post-card-thumb" src="{{ post.image | relative_url }}" alt="" loading="lazy">{% endif %}
   </li>
 {% endfor %}
 </ul>
